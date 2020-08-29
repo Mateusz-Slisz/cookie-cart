@@ -23,11 +23,9 @@ services:
       - db
     volumes:
       - django-static:/var/www/django/static
-      - django-media:/var/www/django/media
     environment:
       DJANGO_DATABASE_HOST: db
 
 volumes:
   pgdata:
   django-static:
-  django-media:
