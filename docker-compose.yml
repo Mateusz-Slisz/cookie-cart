@@ -1,0 +1,33 @@
+---
+
+version: "3.7"
+services:
+  db:
+    image: postgres:12.4
+    container_name: cookie_cart_db
+    restart: unless-stopped
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    env_file: ./config/.env
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: docker/django/Dockerfile
+    env_file: ./config/.env
+    container_name: cookie_cart_backend
+    restart: unless-stopped
+    depends_on:
+      - db
+    volumes:
+      - django-static:/var/www/django/static
+      - django-media:/var/www/django/media
+    environment:
+      DJANGO_DATABASE_HOST: db
+
+volumes:
+  pgdata:
+  django-static:
+  django-media:
