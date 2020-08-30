@@ -1,12 +1,18 @@
 from typing import List
 
-from server.settings.components import config, BASE_DIR
+from server.settings.components import BASE_DIR, config
 from server.settings.components.common import INSTALLED_APPS
 from server.settings.components.drf import REST_FRAMEWORK
 
 DEBUG = True
 
-ALLOWED_HOSTS = [config("ALLOWED_HOST"), "localhost", "0.0.0.0", "127.0.0.1", "[::1]"]
+ALLOWED_HOSTS = [
+    config("ALLOWED_HOST"),
+    "localhost",
+    "0.0.0.0",
+    "127.0.0.1",
+    "[::1]",
+]
 
 INSTALLED_APPS += ("drf_yasg",)
 
@@ -21,7 +27,7 @@ REST_FRAMEWORK["DEFAULT_AUTHENTICATION_CLASSES"] = [
 ]
 
 REST_FRAMEWORK["DEFAULT_RENDERER_CLASSES"] += [  # type: ignore
-    "rest_framework.renderers.BrowsableAPIRenderer"
+    "rest_framework.renderers.BrowsableAPIRenderer",
 ]
 
 # Templates
@@ -33,7 +39,7 @@ TEMPLATES = [
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
             # Contains plain text templates, like `robots.txt`:
-            BASE_DIR.joinpath("server", "templates")
+            BASE_DIR.joinpath("server", "templates"),
         ],
         "OPTIONS": {
             "context_processors": [
@@ -47,5 +53,5 @@ TEMPLATES = [
             ],
             "debug": DEBUG,
         },
-    }
+    },
 ]

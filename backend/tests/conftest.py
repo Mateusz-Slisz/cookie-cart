@@ -12,7 +12,7 @@ def api_client():
 @pytest.fixture
 def admin_user(db):
     return User.objects.create_superuser(
-        username="admin", email="", password="password"
+        username="admin", email="", password="password",
     )
 
 

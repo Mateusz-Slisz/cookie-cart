@@ -1,13 +1,14 @@
+from enum import Enum
 from os import environ
 
 from split_settings.tools import include
 
 
-class DjangoSettingsVersion:
-    DEVELOPMENT = "development"
+class DjangoSettings(Enum):
+    development = "development"
 
 
-DJANGO_ENV = environ.get("DJANGO_ENV", DjangoSettingsVersion.DEVELOPMENT)
+DJANGO_ENV = environ.get("DJANGO_ENV", DjangoSettings.development.value)
 
 base_settings = [
     "components/common.py",
