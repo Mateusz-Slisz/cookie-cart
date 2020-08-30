@@ -21,7 +21,7 @@ To run tests use
 ```
 make test
 ```
-To check code through black, flake8 and mypy, run 
+To check code through black, flake8, isort and mypy, run 
 ```
 make check
 ```

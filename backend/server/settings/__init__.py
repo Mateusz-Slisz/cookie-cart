@@ -1,7 +1,7 @@
+from enum import Enum
 from os import environ
 
 from split_settings.tools import include
-from enum import Enum
 
 
 class DjangoSettings(Enum):
