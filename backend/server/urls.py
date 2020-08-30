@@ -1,14 +1,14 @@
 from django.conf import settings
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import include, path
 
-from server.settings import DJANGO_ENV, DjangoSettingsVersion
+from server.settings import DJANGO_ENV, DjangoSettings
 
 urlpatterns = [
     path(f"{settings.ADMIN_PANEL_ROUTE}/", admin.site.urls),
 ]
 
-if DJANGO_ENV == DjangoSettingsVersion.DEVELOPMENT:  # pragma: no cover
+if DJANGO_ENV == DjangoSettings.development.value:  # pragma: no cover
     from health_check import urls as health_urls
     from server.settings.swagger import schema_view
 

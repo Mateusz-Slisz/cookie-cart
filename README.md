@@ -16,10 +16,14 @@ Start images
 make up-dev
 ```
 
-# Testing & mypy
+# Testing & formatting
+To run tests use
 ```
-make run-tests
-make check-mypy
+make test
+```
+To check code through black, flake8 and mypy, run 
+```
+make check
 ```
 
 ## Admin panel

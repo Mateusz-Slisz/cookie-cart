@@ -17,11 +17,11 @@ load-fixtures:
 	docker-compose exec backend bash -c "./manage.py migrate && \
     ./manage.py loaddata fixtures/dev_users.json"
 
-run-tests:
+test:
 	docker-compose exec backend bash -c "pytest"
 
-check-mypy:
-	docker-compose exec backend bash -c "mypy server"
+check:
+	docker-compose exec backend bash -c "black server & flake8 server & mypy server"
 
 recreate-db:
 	docker-compose stop backend

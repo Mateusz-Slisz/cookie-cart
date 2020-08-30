@@ -55,7 +55,7 @@ DATABASES = {
         "PORT": config("DJANGO_DATABASE_PORT", cast=int),
         "CONN_MAX_AGE": config("CONN_MAX_AGE", cast=int, default=60),
         "OPTIONS": {"connect_timeout": 10},
-    }
+    },
 }
 
 
