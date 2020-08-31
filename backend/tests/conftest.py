@@ -3,6 +3,9 @@ from django.contrib.auth.models import User
 from django.test import Client
 from rest_framework.test import APIClient
 
+# noinspection PyUnresolvedReferences
+from tests.test_server.test_apps.test_cart.fixtures import random_id
+
 
 @pytest.fixture
 def api_client():

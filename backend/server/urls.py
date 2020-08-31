@@ -6,6 +6,7 @@ from server.settings import DJANGO_ENV, DjangoSettings
 
 urlpatterns = [
     path(f"{settings.ADMIN_PANEL_ROUTE}/", admin.site.urls),
+    path("api/", include("server.api_urls")),
 ]
 
 if DJANGO_ENV == DjangoSettings.development.value:  # pragma: no cover
