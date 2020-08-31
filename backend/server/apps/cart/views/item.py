@@ -27,15 +27,15 @@ class ItemCreateAPIView(views.APIView):
         response = Response(status=status.HTTP_204_NO_CONTENT)
 
         item_entity: ItemEntity = ItemEntity(**serializer.validated_data)
-        cookie_cart_id: Optional[str] = request.COOKIES.get(CART_ID_COOKIE_KEY)
+        cart_id_cookie: Optional[str] = request.COOKIES.get(CART_ID_COOKIE_KEY)
 
         item: Item = create_or_update_item_in_cart(
-            item_entity=item_entity, cart_id=cookie_cart_id,
+            item_entity=item_entity, cart_id=cart_id_cookie,
         )
         set_cart_id_cookie(
             response=response,
             cart_id=str(item.cart_id),
-            cookie_cart_id=cookie_cart_id,
+            cart_id_cookie=cart_id_cookie,
         )
 
         return response

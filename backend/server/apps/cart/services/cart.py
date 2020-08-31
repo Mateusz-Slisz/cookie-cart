@@ -8,9 +8,9 @@ from server.apps.cart.types import ResponseType
 
 
 def set_cart_id_cookie(
-    *, response: ResponseType, cart_id: str, cookie_cart_id: Optional[str],
+    *, response: ResponseType, cart_id: str, cart_id_cookie: Optional[str],
 ) -> None:
-    if cookie_cart_id is None or cart_id != cookie_cart_id:
+    if cart_id_cookie is None or cart_id != cart_id_cookie:
         response.set_cookie(
             key=CART_ID_COOKIE_KEY, value=cart_id, max_age=CART_ID_COOKIE_AGE,
         )

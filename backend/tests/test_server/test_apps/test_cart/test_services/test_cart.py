@@ -20,12 +20,12 @@ def test_set_cart_id_cookie_sets_cart_cookie_when_cookie_does_not_exist(
 ):
     """
     Function sets `cart_id` cookie to response with correct values,
-    when `cookie_cart_id` does not exist
+    when `cart_id_cookie` does not exist
     """
     cart = CartFactory.create()
 
     set_cart_id_cookie(
-        response=clean_response, cart_id=cart.pk, cookie_cart_id=None
+        response=clean_response, cart_id=cart.pk, cart_id_cookie=None
     )
     cart_id_cookie = clean_response.cookies[CART_ID_COOKIE_KEY]
 
@@ -39,12 +39,12 @@ def test_set_cart_id_cookie_sets_cart_cookie_when_cookie_is_invalid(
 ):
     """
     Function sets `cart_id` cookie to response with correct values,
-    when `cookie_cart_id` is not same as `cart_id`
+    when `cart_id_cookie` is not same as `cart_id`
     """
     cart = CartFactory.create()
 
     set_cart_id_cookie(
-        response=clean_response, cart_id=cart.pk, cookie_cart_id=random_id
+        response=clean_response, cart_id=cart.pk, cart_id_cookie=random_id
     )
     cart_id_cookie = clean_response.cookies[CART_ID_COOKIE_KEY]
 
@@ -54,11 +54,11 @@ def test_set_cart_id_cookie_sets_cart_cookie_when_cookie_is_invalid(
 
 @pytest.mark.django_db
 def test_set_cart_id_cookie_does_nothing_when_cookie_is_valid(clean_response):
-    """Function does nothing when `cookie_cart_id` is same as `cart_id`"""
+    """Function does nothing when `cart_id_cookie` is same as `cart_id`"""
     cart = CartFactory.create()
 
     set_cart_id_cookie(
-        response=clean_response, cart_id=cart.pk, cookie_cart_id=cart.pk
+        response=clean_response, cart_id=cart.pk, cart_id_cookie=cart.pk
     )
 
     assert CART_ID_COOKIE_KEY not in clean_response.cookies
