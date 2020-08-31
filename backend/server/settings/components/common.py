@@ -16,6 +16,7 @@ INSTALLED_APPS: Tuple[str, ...] = (
     # django-admin:
     "django.contrib.admin",
     # Your apps go here:
+    "server.apps.cart",
     # Health checks:
     "health_check",
     "health_check.db",

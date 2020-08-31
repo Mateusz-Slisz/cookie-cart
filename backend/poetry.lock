@@ -265,19 +265,6 @@ django = ">=1.11"
 
 [[package]]
 category = "main"
-description = "Mypy stubs for Django"
-name = "django-stubs"
-optional = false
-python-versions = ">=3.6"
-version = "1.5.0"
-
-[package.dependencies]
-django = "*"
-mypy = ">=0.770,<0.780"
-typing-extensions = "*"
-
-[[package]]
-category = "main"
 description = "Web APIs for Django, made easy."
 name = "djangorestframework"
 optional = false
@@ -286,19 +273,6 @@ version = "3.11.1"
 
 [package.dependencies]
 django = ">=1.11"
-
-[[package]]
-category = "main"
-description = "PEP-484 stubs for django-rest-framework"
-name = "djangorestframework-stubs"
-optional = false
-python-versions = "*"
-version = "1.2.0"
-
-[package.dependencies]
-django-stubs = ">=1.3.0"
-mypy = ">=0.750"
-typing-extensions = "*"
 
 [[package]]
 category = "main"
@@ -575,18 +549,6 @@ version = "0.2.3"
 
 [package.dependencies]
 flake8 = "*"
-
-[[package]]
-category = "main"
-description = "Let your Python tests travel through time"
-name = "freezegun"
-optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
-version = "0.3.15"
-
-[package.dependencies]
-python-dateutil = ">=1.0,<2.0 || >2.0"
-six = "*"
 
 [[package]]
 category = "main"
@@ -1372,7 +1334,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "24e4a794fb200624d78f805f37f921f7bb69903235d8cfd52100849a8734c429"
+content-hash = "6d7f13a671bb9c7cf4f0cdf09ba88a7faff19f4bc2a4c65ccc67ac0792de36da"
 python-versions = "3.8.5"
 
 [metadata.files]
@@ -1534,17 +1496,9 @@ django-health-check = [
     {file = "django-health-check-3.12.1.tar.gz", hash = "sha256:0563827e003d25fd4d9ebbd7467dea5f390435628d645aaa63f8889deaded73a"},
     {file = "django_health_check-3.12.1-py2.py3-none-any.whl", hash = "sha256:9e6b7d93d4902901474efd4e25d31b5aaea7563b570c0260adce52cd3c3a9e36"},
 ]
-django-stubs = [
-    {file = "django-stubs-1.5.0.tar.gz", hash = "sha256:b4c9042f2c2fcb89dc0fb37df070cce0f9bf93b39ae193847b6e5a392b13c430"},
-    {file = "django_stubs-1.5.0-py3-none-any.whl", hash = "sha256:4a03df70e062f4133085efc461148d0934f36ccfd60a2b6d7bc35821f62008b6"},
-]
 djangorestframework = [
     {file = "djangorestframework-3.11.1-py3-none-any.whl", hash = "sha256:8b1ac62c581dbc5799b03e535854b92fc4053ecfe74bad3f9c05782063d4196b"},
     {file = "djangorestframework-3.11.1.tar.gz", hash = "sha256:6dd02d5a4bd2516fb93f80360673bf540c3b6641fec8766b1da2870a5aa00b32"},
-]
-djangorestframework-stubs = [
-    {file = "djangorestframework-stubs-1.2.0.tar.gz", hash = "sha256:cd98afa2a7a718689c8aafe162120074976c996f755b0c03d106b6c6c73b95f7"},
-    {file = "djangorestframework_stubs-1.2.0-py3-none-any.whl", hash = "sha256:5df991dcdf28b2b761645282dfcae53f41d58200291ff7d5c0d028925fd9f215"},
 ]
 docutils = [
     {file = "docutils-0.16-py2.py3-none-any.whl", hash = "sha256:0c5b78adfbf7762415433f5515cd5c9e762339e23369dbe8000d84a4bf4ab3af"},
@@ -1631,10 +1585,6 @@ flake8-rst-docstrings = [
 flake8-string-format = [
     {file = "flake8-string-format-0.2.3.tar.gz", hash = "sha256:774d56103d9242ed968897455ef49b7d6de272000cfa83de5814273a868832f1"},
     {file = "flake8_string_format-0.2.3-py2.py3-none-any.whl", hash = "sha256:68ea72a1a5b75e7018cae44d14f32473c798cf73d75cbaed86c6a9a907b770b2"},
-]
-freezegun = [
-    {file = "freezegun-0.3.15-py2.py3-none-any.whl", hash = "sha256:82c757a05b7c7ca3e176bfebd7d6779fd9139c7cb4ef969c38a28d74deef89b2"},
-    {file = "freezegun-0.3.15.tar.gz", hash = "sha256:e2062f2c7f95cc276a834c22f1a17179467176b624cc6f936e8bc3be5535ad1b"},
 ]
 gitdb = [
     {file = "gitdb-4.0.5-py3-none-any.whl", hash = "sha256:91f36bfb1ab7949b3b40e23736db18231bf7593edada2ba5c3a174a7b23657ac"},

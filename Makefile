@@ -21,7 +21,7 @@ test:
 	docker-compose exec backend bash -c "pytest"
 
 check:
-	docker-compose exec backend bash -c "black server & flake8 & isort & server & mypy server"
+	docker-compose exec backend bash -c "black server && flake8 server & mypy server"
 
 recreate-db:
 	docker-compose stop backend
