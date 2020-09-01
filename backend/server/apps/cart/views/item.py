@@ -7,11 +7,13 @@ from rest_framework.request import Request
 from rest_framework.response import Response
 
 from server.apps.cart.constants import CART_ID_COOKIE_KEY
-from server.apps.cart.entities.item import ItemEntity
+from server.apps.cart.entities import ItemEntity
 from server.apps.cart.models import Item
 from server.apps.cart.serializers import ItemInputSerializer
-from server.apps.cart.services.cart import set_cart_id_cookie
-from server.apps.cart.services.item import create_or_update_item_in_cart
+from server.apps.cart.services import (
+    set_cart_id_cookie,
+    create_or_update_item_in_cart,
+)
 
 
 class ItemCreateAPIView(views.APIView):
