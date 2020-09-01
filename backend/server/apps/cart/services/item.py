@@ -4,7 +4,7 @@ from typing import Optional
 from django.core import exceptions as django_exceptions
 from django.db import transaction
 
-from server.apps.cart.entities.item import ItemEntity
+from server.apps.cart.entities import ItemEntity
 from server.apps.cart.models import Item, Cart
 
 
